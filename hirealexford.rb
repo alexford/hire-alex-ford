@@ -3,9 +3,11 @@ require 'twilio-ruby'
 require 'stripe'
 require 'sinatra'
 
+
 ## Stripe setup
 Stripe.api_key = ENV['STRIPE_KEY']
 Stripe.api_version = "2014-01-31"
+
 
 ## landing page
 get '/' do
@@ -43,7 +45,6 @@ post '/reserve' do
   # return Stripe customer data to frontend  
   customer.to_json
 end
-
 
 #### Sandbox/testing
 
