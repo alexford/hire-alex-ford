@@ -56,13 +56,14 @@ body
 
 .container
   max-width: 616px
-  margin: 50px auto
+  margin: 100px auto
 
   @media (screen and max-width: 616px)
     margin-top: 0
 
   section
     padding: 30px
+    position: relative
 
     &.ruled
       border-top: 1px solid #ccc
@@ -151,6 +152,7 @@ p
   font-size: 20px
   line-height: 30px
 
+
 .info p
   font-size: 15px
   line-height: 22px
@@ -163,3 +165,25 @@ a
   text-decoration: none
   &:hover
     border-bottom: 1px solid #4a90e2
+
+.avatar
+  width: 125px
+  height: 125px
+  background: url('/images/headshot.jpg')
+  background-size: cover
+  border-radius: 75px
+
+  -moz-box-shadow:    0px 1px 0px 1px rgba(0,0,0,0.07)
+  -webkit-box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.07)
+  box-shadow:         0px 1px 0px 1px rgba(0,0,0,0.07)
+
+  position: absolute
+  top: -50px
+  right: 50px
+
+  @media (screen and max-width: 616px)
+    top: 15px
+    right: 15px
+    width: 70px
+    height: 70px
+
