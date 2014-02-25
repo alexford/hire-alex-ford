@@ -11,12 +11,10 @@ $(function() {
     amount: 10000,
     image: '/images/headshot.jpg',
 
-    closed: function() {
+    token: function(token, args) {
       $("section#form").hide();
       $("section.status#reserving").show();
-    },
 
-    token: function(token, args) {
       $("input[name='reservation[token]']").val(token.id);
 
       $.ajax({
