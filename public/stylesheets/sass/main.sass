@@ -65,6 +65,8 @@ body
     padding: 30px
     position: relative
 
+    clear: both
+
     &.ruled
       border-top: 1px solid #ccc
       margin-top: 10px
@@ -144,6 +146,10 @@ h2
   font-weight: 700
   strong
     font-weight: 300
+  small
+    font-size: 14px
+    margin-left: 10px
+    font-weight: 300
 
 p
   font-weight: 300
@@ -159,6 +165,34 @@ p
   margin-bottom: 10px
   strong
     font-weight: 700
+
+.testimonials
+  margin-bottom: 40px
+
+.testimonial
+  float: left
+  width: 47%
+  margin-right: 5%
+  margin-bottom: 30px
+
+  &:nth-child(odd)
+    margin-right: 0
+
+  @media (screen and max-width: 480px)
+    width: 100%
+    margin-right: 0%
+
+  p
+    font-size: 15px
+    line-height: 22px
+    font-style: italic
+    font-weight: 400
+
+    .source
+      display: block
+      font-weight: 700
+      font-style: normal
+      margin-top: 10px
 
 a
   color: #4A90E2
