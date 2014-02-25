@@ -73,13 +73,13 @@
         %p Hiring a designer or web developer? I can talk through and identify the skills and traits you need, and help evaluate candidates.
 
       %section#testimonials.testimonials
-        %h1 Client testimonials
+        %h1 Client Testimonials
         .testimonial
           %p
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             %span.source
               Ryan Battles,
-              %a(href='http://harpoonapp.com' target='_blank') Harpoon
+              %a(href='http://wearebucketandshovel.com' target='_blank') Bucket & Shovel
 
         .testimonial
           %p
@@ -87,10 +87,27 @@
             %span.source
               Nils Root,
               %a(href='http://gohayo.com' target='_blank') Hayo
+              ="/"
+              %a(href='http://bookbagvideo.com' target='_blank') Bookbag Video
 
       %section#form.ruled
         %h1 Ready to have your problem solved?
-        form form form
+        %form
+          .input.half
+            %label(for="reservation[name]") Your name
+            %input(name="reservation[name]" type="text")
+          .input.half
+            %label(for="reservation[email]") Your email address
+            %input(name="reservation[email]" type="email")
+          .input.full
+            %label(for="reservation[message]")
+              Brief description of your problem/request
+              %small (With relevant URL if applicable)
+            %textarea(name="reservation[message]")
+          %input(type="hidden" name="reservation[token]")
+
+          %input(type="submit" value="Get your hour now")
+
 
       %section.ruled.info
         %h2 How does this work?
@@ -107,6 +124,9 @@
         %p
           If you're in Columbus, Ohio, we can arrange to meet for your hour in person, if you prefer.
 
+        %p
+          The eventual charge to your credit card will appear from Crater Creative, LLC
+
         %h2 Any other questions?
         %p
           You can get in touch with me via 
@@ -119,3 +139,12 @@
           %strong Copyright ©2014 Alex Ford
           %br
           Columbus, OH
+
+  %script(type="text/javascript" src="https://checkout.stripe.com/checkout.js")
+
+  :javascript
+    var bootstrap = {
+      stripe_key: "#{ENV['STRIPE_KEY_PUBLISHABLE']}"
+    };
+
+  = javascript_bundle_include_tag(:all)

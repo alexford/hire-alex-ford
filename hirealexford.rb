@@ -2,11 +2,18 @@ require 'json'
 require 'twilio-ruby'
 require 'stripe'
 require 'sinatra'
+require 'sinatra/bundles'
 
 
 ## Stripe setup
-Stripe.api_key = ENV['STRIPE_KEY']
+Stripe.api_key = ENV['STRIPE_KEY_SECRET']
 Stripe.api_version = "2014-01-31"
+
+## Bundles
+javascript_bundle(:all, [
+  "vendor/jquery.min",
+  "main"
+]);
 
 
 ## landing page
@@ -34,13 +41,18 @@ post '/reserve' do
         'message' => @reservation[:message]
       }
     )
-  rescue Stripe::StripeError
+  rescue Stripe::StripeError => e
     # TODO make this error logging better
+
+    body = e.json_body
+    err = body[:error]
+    p err
+
     error(500, 'StripeError')
   end
 
   # notify me!
-  sendsms('New hirealexford.com customer: #{@reservation[:name]} (#{@reservation[:email]}). #{@reservation[:message]}')
+  sendsms("New hirealexford.com customer: #{@reservation[:name]} (#{@reservation[:email]}). #{@reservation[:message]}")
 
   # return Stripe customer data to frontend  
   customer.to_json

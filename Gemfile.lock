@@ -9,9 +9,13 @@ GEM
       multi_json (>= 1.5)
     mime-types (1.25.1)
     multi_json (1.8.4)
+    oyster (0.9.5)
+    packr (3.1.1)
+      oyster (>= 0.9.5)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
+    rainpress (1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sass (3.2.10)
@@ -19,6 +23,11 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-bundles (0.5.3)
+      packr (~> 3.1.0)
+      rack (~> 1.0)
+      rainpress (~> 1.0)
+      sinatra (~> 1.2)
     stripe (1.8.8)
       multi_json (>= 1.0.4, < 2)
       rest-client (~> 1.4)
@@ -35,5 +44,6 @@ DEPENDENCIES
   haml
   sass
   sinatra
+  sinatra-bundles
   stripe
   twilio-ruby
