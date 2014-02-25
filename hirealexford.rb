@@ -1,5 +1,6 @@
 require 'sinatra'
 
+## landing page
 get '/' do
-	'Hello world!'
+  haml :index
 end
