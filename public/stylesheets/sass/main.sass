@@ -1,3 +1,6 @@
+// fontawesome
+@import './vendor/fontawesome/font-awesome.scss'
+
 // reset
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -61,6 +64,10 @@ body
   section
     padding: 30px
 
+    h2:not(:last-child)
+      margin-bottom: 15px
+
+
     &.white
       background: white
       border-radius: 8px
@@ -71,10 +78,51 @@ body
       @media (screen and max-width: 616px)
         border-radius: 0
 
-      h2
-        font-weight: 700
-        margin-bottom: 15px
+    i.icon-left, i.icon-right
+      display: block
+      height: 150px
+      width: 150px
+      
+      font-size: 75px
+      color: #888
+      text-align: left
+      line-height: 125px
 
+      @media (screen and max-width: 570px)
+        font-size: 50px !important
+        line-height: 50px 
+        width: 80px
+        height: 60px
+        padding: 0 !important
+        float: none !important
+        text-align: left !important
+
+      &.icon-left
+        float: left
+        padding-left: 23px
+        
+      &.icon-right
+        float: right
+        text-align: right
+        padding-right: 23px
+
+      &.blue
+        color: #358DF4  
+      &.green
+        color: #7CCD2F
+      &.red
+        color: #D0021B
+      &.turqoise
+        color: #40DFC2
+      &.orange
+        color: #F5A623
+        font-size: 100px
+      &.purple
+        color: #8E43FB
+
+    &.skill p
+      font-size: 18px
+      line-height: 28px
 
 h1
   color: #4A4A4A
@@ -91,8 +139,9 @@ h2
   color: #4a4a4a
   font-size: 20px
   line-height: 30px
+  font-weight: 700
   strong
-    font-weight: 700
+    font-weight: 300
 
 p
   font-weight: 300
@@ -100,3 +149,9 @@ p
   color: #4A4A4A
   font-size: 20px
   line-height: 30px
+
+a
+  color: #4A90E2
+  text-decoration: none
+  &:hover
+    border-bottom: 1px solid #4a90e2
