@@ -3,15 +3,9 @@ require 'twilio-ruby'
 require 'stripe'
 require 'sinatra'
 
-
 ## Stripe setup
 Stripe.api_key = ENV['STRIPE_KEY']
 Stripe.api_version = "2014-01-31"
-
-## log params
-before do
-  p params
-end
 
 ## landing page
 get '/' do
@@ -39,7 +33,7 @@ post '/reserve' do
       }
     )
   rescue Stripe::StripeError
-    # oh noes! TODO make this error logging better
+    # TODO make this error logging better
     error(500, 'StripeError')
   end
 
@@ -50,7 +44,14 @@ post '/reserve' do
   customer.to_json
 end
 
+
+#### Sandbox/testing
+
 get '/testmessage' do
+  # send a test SMS message
+  unless ENV['ALLOW_TEST_ENDPOINTS'] == 1
+    error(401, 'No test endpoints in this environment')
+  end
   sendsms('Test message')
 end
 
