@@ -10,6 +10,12 @@ $(function() {
 
     amount: 10000,
     image: '/images/headshot.jpg',
+
+    closed: function() {
+      $("section#form").hide();
+      $("section.status#reserving").show();
+    },
+
     token: function(token, args) {
       $("input[name='reservation[token]']").val(token.id);
 
@@ -32,9 +38,6 @@ $(function() {
 
   $('form').submit(function(e) {
     e.preventDefault();
-
-    $("section#form").hide();
-    $("section.status#reserving").show();
 
     tokenHandler.open({
       email: $("input[name='reservation[email]']").val()
