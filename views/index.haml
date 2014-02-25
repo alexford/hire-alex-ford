@@ -90,6 +90,28 @@
               ="/"
               %a(href='http://bookbagvideo.com' target='_blank') Bookbag Video
 
+      / status sections
+      %section#error.status.ruled.hidden
+        %h2
+          = succeed ' ' do
+            %i.fa-exclamation-circle.fa
+          %br
+          There was a problem reserving your hour. Please get in touch with me and I will work it out!
+
+      %section#reserving.hidden.status.ruled
+        %h2
+          = succeed ' ' do
+            %i.fa-refresh.fa.fa-spin
+          %br
+          Reserving your hour...
+
+      %section#success.hidden.status.ruled
+        %h2
+          = succeed ' ' do
+            %i.fa-check.fa
+          %br
+          Thanks! You will hear from me very soon.
+
       %section#form.ruled
         %h1 Ready to have your problem solved?
         %form
@@ -107,6 +129,15 @@
           %input(type="hidden" name="reservation[token]")
 
           %input(type="submit" value="Get your hour now")
+
+          .info
+            .amount
+              %strong $100
+              USD
+              %small
+                Charged when your hour
+                %br
+                is scheduled
 
 
       %section.ruled.info
@@ -129,10 +160,8 @@
 
         %h2 Any other questions?
         %p
-          You can get in touch with me via 
+          The best way to get in touch with me is through the form above or 
           %a(href="http://twitter.com/alexford" target="_blank") Twitter
-          or via email at
-          %strong iwantto@hirealexford.com
 
       %section.ruled.info
         %p

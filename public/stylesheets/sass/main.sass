@@ -178,7 +178,7 @@ p
   &:nth-child(odd)
     margin-right: 0
 
-  @media (screen and max-width: 480px)
+  @media (screen and max-width: 479px)
     width: 100%
     margin-right: 0%
 
@@ -221,3 +221,141 @@ a
     width: 70px
     height: 70px
 
+.hidden
+  display: none
+
+section.status
+
+  &#success h2
+    border-color: #7CCD2F
+
+  h2
+    border-radius: 8px
+    border: 1px dashed #ccc
+    padding: 20px
+    text-align: center
+
+    .fa-exclamation-circle
+      color: #a00
+
+    .fa-refresh
+      color: #aaa
+
+    .fa-check
+      color: #7CCD2F
+
+// form
+
+form
+
+  .info
+    display: inline-block
+    color: #959595
+    width: 35%
+    padding-left: 15px
+    padding-top: 13px
+    font-size: 18px
+    strong
+      font-weight: 700
+      color: #777
+
+    small
+      margin-top: 5px
+      display: block
+      font-size: 12px
+      line-height: 14px
+
+    @media (screen and max-width: 479px)
+      width: 100%
+      padding-left: 0
+      padding-top: 20px
+
+      .amount
+        display: inline-block
+        width: 100%
+
+      small
+        width: 50%
+        float: right
+        margin-top: 0
+        text-align: right
+
+  input[type='submit']
+    float: left
+    -webkit-font-smoothing: antialiased
+    display: inline-block
+    width: 60%
+    border: none
+    background: #4A90E2
+    color: white
+    border-radius: 8px
+    font-family: "adelle-sans",sans-serif
+    font-size: 20px
+    font-weight: 700
+    padding: 20px
+
+
+
+    @media (screen and max-width: 479px)
+      width: 100%
+
+    /* Rectangle 8: */
+    -moz-box-shadow: 0px 2px 0px 0px #407FC8
+    -webkit-box-shadow: 0px 2px 0px 0px #407FC8
+    box-shadow: 0px 2px 0px 0px #407FC8
+
+    &:hover
+      cursor: pointer
+      background: #5498E8
+
+    &:active
+      -moz-box-shadow: none
+      -webkit-box-shadow: none
+      box-shadow: none
+      position: relative
+      top: 2px
+
+    &:active, &:focus
+      outline: none
+
+  .input
+    margin-bottom: 20px
+
+    &.half
+      float: left
+      width: 47.5%
+      margin-right: 5%
+
+      &:nth-child(even)
+        margin-right: 0
+
+      @media (screen and max-width: 479px)
+        width: 100%
+        margin-right: 0%
+
+    input, textarea
+      border-radius: 3px
+      background: #fafafa
+      border: 1px solid #bbb
+      font-size: 18px
+      padding: 10px
+      font-family: "adelle-sans",sans-serif
+      color: #333
+      width: 100%
+
+      &:focus
+        background: #fff
+        outline: none
+        border-color: #999
+
+    label
+      font-weight: 700
+      color: #4A4A4A
+      text-transform: uppercase
+      font-size: 12px
+      line-height: 15px
+      display: block
+      margin-bottom: 5px
+
+      small
+        font-weight: 300

@@ -42,17 +42,15 @@ post '/reserve' do
       }
     )
   rescue Stripe::StripeError => e
-    # TODO make this error logging better
-
     body = e.json_body
     err = body[:error]
     p err
 
-    error(500, 'StripeError')
+    error(500, "StripeError: #{err[:message]}")
   end
 
   # notify me!
-  sendsms("New hirealexford.com customer: #{@reservation[:name]} (#{@reservation[:email]}). #{@reservation[:message]}")
+  sendsms("New hirealexford.com customer! #{@reservation[:name]} (#{@reservation[:email]}). #{@reservation[:message]}")
 
   # return Stripe customer data to frontend  
   customer.to_json

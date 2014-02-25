@@ -18,10 +18,12 @@ $(function() {
         url: '/reserve',
         data: $("form").serialize(),
         success: function(data) {
-          debugger;
+          $("section.status").hide();
+          $("section.status#success").show();
         },
         error: function(data) {
-
+          $("section.status").hide();
+          $("section.status#error").show();
         },
         dataType: 'JSON'
       });
@@ -30,6 +32,10 @@ $(function() {
 
   $('form').submit(function(e) {
     e.preventDefault();
+
+    $("section#form").hide();
+    $("section.status#reserving").show();
+
     tokenHandler.open({
       email: $("input[name='reservation[email]']").val()
     });
