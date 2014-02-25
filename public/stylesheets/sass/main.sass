@@ -64,6 +64,10 @@ body
   section
     padding: 30px
 
+    &.ruled
+      border-top: 1px solid #ccc
+      margin-top: 10px
+
     h2:not(:last-child)
       margin-bottom: 15px
 
@@ -81,30 +85,28 @@ body
     i.icon-left, i.icon-right
       display: block
       height: 150px
-      width: 150px
+      width: 100px
       
-      font-size: 75px
+      font-size: 60px
       color: #888
       text-align: left
-      line-height: 125px
+      line-height: 60px
 
       @media (screen and max-width: 570px)
-        font-size: 50px !important
-        line-height: 50px 
+        font-size: 40px !important
+        line-height: 40px 
         width: 80px
-        height: 60px
+        height: 50px
         padding: 0 !important
         float: none !important
         text-align: left !important
 
       &.icon-left
         float: left
-        padding-left: 23px
         
       &.icon-right
         float: right
         text-align: right
-        padding-right: 23px
 
       &.blue
         color: #358DF4  
@@ -116,7 +118,6 @@ body
         color: #40DFC2
       &.orange
         color: #F5A623
-        font-size: 100px
       &.purple
         color: #8E43FB
 
@@ -149,6 +150,13 @@ p
   color: #4A4A4A
   font-size: 20px
   line-height: 30px
+
+.info p
+  font-size: 15px
+  line-height: 22px
+  margin-bottom: 10px
+  strong
+    font-weight: 700
 
 a
   color: #4A90E2
