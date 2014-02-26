@@ -72,23 +72,23 @@
         %h2 Talent
         %p Hiring a designer or web developer? I can talk through and identify the skills and traits you need, and help evaluate candidates.
 
-      / %section#testimonials.testimonials
-      /   %h1 Client Testimonials
-      /   .testimonial
-      /     %p
-      /       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-      /       %span.source
-      /         Ryan Battles,
-      /         %a(href='http://wearebucketandshovel.com' target='_blank') Bucket & Shovel
+      %section#testimonials.testimonials
+        /%h1 Client Testimonials
+        / .testimonial
+        /   %p
+        /     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        /     %span.source
+        /       Ryan Battles,
+        /       %a(href='http://wearebucketandshovel.com' target='_blank') Bucket & Shovel
 
-      /   .testimonial
-      /     %p
-      /       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-      /       %span.source
-      /         Nils Root,
-      /         %a(href='http://gohayo.com' target='_blank') Hayo
-      /         ="/"
-      /         %a(href='http://bookbagvideo.com' target='_blank') Bookbag Video
+        .testimonial{ style: 'width: 100% '}
+          %p
+            "Alex's breadth of knowledge is amazing. I don't know anyone else who can build technology while also having such a deep understanding of proficient design and modern styles"
+            %span.source
+              Nils Root,
+              %a(href='http://gohayo.com' target='_blank') Hayo
+              ="/"
+              %a(href='http://bookbagvideo.com' target='_blank') Bookbag Video
 
       / status sections
       %section#error.status.ruled.hidden
@@ -168,6 +168,9 @@
           %strong Copyright ©2014 Alex Ford
           %br
           Columbus, OH
+        %p.byline
+          :plain
+            Powered by <a href='http://sinatrarb.com' target='_blank'>Sinatra</a>, <a href='http://heroku.com' target='_blank'>Heroku</a>, <a href='http://twilio.com'>Twilio</a>, and <a href='http://stripe.com'>Stripe</a>. Source on <a href='https://github.com/alexford/hire-alex-ford'><i class='fa fa-github'></i> GitHub</a>.
 
   %script(type="text/javascript" src="https://checkout.stripe.com/checkout.js")
 
