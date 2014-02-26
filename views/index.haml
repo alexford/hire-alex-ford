@@ -75,17 +75,19 @@
         %p Hiring a designer or web developer? I can talk through and identify the skills and traits you need, and help evaluate candidates.
 
       %section#testimonials.testimonials
-        /%h1 Client Testimonials
-        / .testimonial
-        /   %p
-        /     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        /     %span.source
-        /       Ryan Battles,
-        /       %a(href='http://wearebucketandshovel.com' target='_blank') Bucket & Shovel
-
-        .testimonial{ style: 'width: 100% '}
+        %h1 Client Testimonials
+        .testimonial
           %p
-            "Alex's breadth of knowledge is amazing. I don't know anyone else who can build technology while also having such a deep understanding of proficient design and modern styles"
+            :plain
+              &ldquo;I’ve had the pleasure of working with Alex for over a year now. He is one of the fastest developers I’ve ever met, and is quick to learn whatever is needed to get the job done. Frankly, an hour with Alex Ford is like a day with other developers.&rdquo;
+            %span.source
+              Ryan Battles,
+              %a(href='http://harpoonapp.com' target='_blank') Harpoon
+
+        .testimonial
+          %p
+            :plain
+              &ldquo;Alex's breadth of knowledge is amazing. I don't know anyone else who can build technology while also having such a deep understanding of proficient design and modern styles&rdquo;
             %span.source
               Nils Root,
               %a(href='http://gohayo.com' target='_blank') Hayo
@@ -93,21 +95,21 @@
               %a(href='http://bookbagvideo.com' target='_blank') Bookbag Video
 
       / status sections
-      %section#error.status.hidden
+      %section#error.status.hidden.ruled
         %h2
           = succeed ' ' do
             %i.fa-exclamation-circle.fa
           %br
           There was a problem reserving your hour. Please get in touch with me and I will work it out!
 
-      %section#reserving.hidden.status
+      %section#reserving.hidden.status.ruled
         %h2
           = succeed ' ' do
             %i.fa-refresh.fa.fa-spin
           %br
           Reserving your hour...
 
-      %section#success.hidden.status
+      %section#success.hidden.status.ruled
         %h2
           = succeed ' ' do
             %i.fa-check.fa
