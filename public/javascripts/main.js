@@ -24,6 +24,9 @@ $(function() {
         success: function(data) {
           $("section.status").hide();
           $("section.status#success").show();
+
+          // track conversion on Google
+          _gaq.push(['_trackEvent', 'reservation', 'made', '', '100']);
         },
         error: function(data) {
           $("section.status").hide();
